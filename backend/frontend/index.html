@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Detail & Shine — выездной автодетейлинг</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2214%22 fill=%22%230f1115%22/><path d=%22M20 60 L35 35 L65 35 L80 60 Z%22 fill=%22none%22 stroke=%22%23e0a13c%22 stroke-width=%224%22/><circle cx=%2235%22 cy=%2265%22 r=%226%22 fill=%22%23e0a13c%22/><circle cx=%2265%22 cy=%2265%22 r=%226%22 fill=%22%23e0a13c%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">DETAIL <span>&</span> SHINE</div>
+      <a href="#booking" class="nav-cta">Записаться</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Выездной автодетейлинг · приедем к вам</p>
+      <h1>Ваша машина будет<br>сиять <span class="highlight">как в салоне</span></h1>
+      <p class="hero-sub">Полировка, химчистка, керамика — без поездок в сервис. Работаем по всему городу, приезжаем в удобное время.</p>
+      <a href="#booking" class="btn-primary">Оставить заявку</a>
+    </div>
+  </header>
+
+  <section class="services" id="services">
+    <div class="section-inner">
+      <p class="section-eyebrow">Услуги</p>
+      <h2>Выберите то, что нужно вашей машине</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">01</div>
+          <h3>Экспресс-мойка</h3>
+          <p>Быстрая мойка кузова и салона, если нужно навести порядок перед встречей.</p>
+          <span class="service-price">от 1 500 ₽</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">02</div>
+          <h3>Химчистка салона</h3>
+          <p>Глубокая чистка сидений, ковриков и потолка от пятен и запахов.</p>
+          <span class="service-price">от 4 000 ₽</span>
+        </div>
+        <div class="service-card featured">
+          <div class="service-icon">03</div>
+          <h3>Полный детейлинг</h3>
+          <p>Кузов, салон, полировка и защитное покрытие — комплексный уход под ключ.</p>
+          <span class="service-price">от 8 500 ₽</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking" id="booking">
+    <div class="section-inner booking-inner">
+      <div class="booking-text">
+        <p class="section-eyebrow">Запись</p>
+        <h2>Оставьте заявку — перезвоним в течение часа</h2>
+        <p class="booking-sub">Укажите удобную дату, и мы согласуем точное время по телефону.</p>
+      </div>
+
+      <form class="booking-form" id="bookingForm">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Ваше имя" required maxlength="120" />
+          <input type="tel" name="phone" placeholder="Телефон" required maxlength="40" />
+        </div>
+        <div class="form-row">
+          <select name="service">
+            <option value="express">Экспресс-мойка</option>
+            <option value="interior">Химчистка салона</option>
+            <option value="full" selected>Полный детейлинг</option>
+          </select>
+          <input type="date" name="preferred_date" />
+        </div>
+        <textarea name="message" placeholder="Комментарий (необязательно)" maxlength="500" rows="3"></textarea>
+        <button type="submit">Отправить заявку</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="section-inner">
+      <span>Detail & Shine · выездной автодетейлинг</span>
+      <a href="/admin.html" class="admin-link">Для администратора</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Detail & Shine — Админ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="loginView" class="admin-login">
+    <p class="section-eyebrow">Detail & Shine</p>
+    <h2>Вход для администратора</h2>
+    <input type="password" id="tokenInput" placeholder="Токен доступа" />
+    <button id="loginBtn">Войти</button>
+    <p class="admin-error" id="loginError"></p>
+  </div>
+
+  <div id="adminView" class="admin-wrap" style="display:none">
+    <div class="admin-header">
+      <h2>Заявки</h2>
+      <button class="del-btn" id="logoutBtn">Выйти</button>
+    </div>
+    <div id="leadsContainer"></div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
