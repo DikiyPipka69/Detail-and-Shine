@@ -115,5 +115,5 @@ DetailShine/
 ---
 
 <p align="center">
-  <sub>Frontend + Backend</sub>
+  <sub>С уважением, Артём</sub>
 </p>
