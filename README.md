@@ -115,5 +115,7 @@ DetailShine/
 ---
 
 <p align="center">
-  <sub>С уважением, Артём</sub>
+  
+  <sub **Detail & Shine** </sub>
+
 </p>
