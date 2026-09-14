@@ -36,3 +36,19 @@ form.addEventListener('submit', async (e) => {
     button.disabled = false;
   }
 });
+
+// ---------- Scroll reveal ----------
+// Sections fade and slide in as the visitor scrolls to them, instead of
+// just appearing statically — small touch of polish, same spirit as the
+// entrance animations in Card Catalog.
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.15});
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
