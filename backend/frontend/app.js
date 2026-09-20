@@ -38,16 +38,13 @@ form.addEventListener('submit', async (e) => {
 });
 
 // ---------- Scroll reveal ----------
-// Sections fade and slide in as the visitor scrolls to them, instead of
-// just appearing statically — small touch of polish, same spirit as the
-// entrance animations in Card Catalog.
+// Sections fade and slide in every time they enter the viewport, and
+// fade back out when scrolled past — works the same whether scrolling
+// down or back up, not just once on first pass.
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target);
-    }
+    entry.target.classList.toggle('is-visible', entry.isIntersecting);
   });
 }, {threshold: 0.15});
 
