@@ -52,3 +52,21 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, {threshold: 0.15});
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ---------- FAQ accordion ----------
+// Only one answer open at a time. The expand/collapse animation itself
+// is pure CSS (grid-template-rows trick) — this just toggles state.
+
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const alreadyOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    document.querySelectorAll('.faq-question').forEach(other => {
+      other.setAttribute('aria-expanded', 'false');
+    });
+
+    if (!alreadyOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
