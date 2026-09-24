@@ -38,13 +38,24 @@ form.addEventListener('submit', async (e) => {
 });
 
 // ---------- Scroll reveal ----------
-// Sections fade and slide in every time they enter the viewport, and
-// fade back out when scrolled past — works the same whether scrolling
-// down or back up, not just once on first pass.
+// Sections fade and slide in only when scrolling downward past them.
+// Scrolling back up never triggers or replays the animation — once a
+// section has appeared, it stays visible.
+
+let lastScrollY = window.scrollY;
+let scrollDirection = 'down';
+
+window.addEventListener('scroll', () => {
+  const currentY = window.scrollY;
+  scrollDirection = currentY > lastScrollY ? 'down' : 'up';
+  lastScrollY = currentY;
+}, {passive: true});
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    entry.target.classList.toggle('is-visible', entry.isIntersecting);
+    if (entry.isIntersecting && scrollDirection === 'down') {
+      entry.target.classList.add('is-visible');
+    }
   });
 }, {threshold: 0.15});
 
