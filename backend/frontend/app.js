@@ -61,6 +61,37 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+// ---------- Trust bar count-up ----------
+// Numbers animate from 0 to their target once, the first time the bar
+// scrolls into view. Doesn't replay on every scroll — just a one-time
+// "counting up" moment, same restraint as the reveal animation above.
+
+function animateCountUp(el){
+  const target = parseInt(el.dataset.target, 10);
+  const suffix = el.dataset.suffix || '';
+  const duration = 900;
+  const start = performance.now();
+
+  function tick(now){
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    el.textContent = Math.round(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.trust-number').forEach(animateCountUp);
+      countObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.4});
+
+document.querySelectorAll('.trust-bar').forEach(el => countObserver.observe(el));
+
 // ---------- FAQ accordion ----------
 // Only one answer open at a time. The expand/collapse animation itself
 // is pure CSS (grid-template-rows trick) — this just toggles state.
