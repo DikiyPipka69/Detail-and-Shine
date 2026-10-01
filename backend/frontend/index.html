@@ -90,7 +90,12 @@
             <option value="interior">Химчистка салона</option>
             <option value="full" selected>Полный детейлинг</option>
           </select>
-          <input type="date" name="preferred_date" />
+        </div>
+        <div class="form-row">
+          <div class="date-field">
+            <label for="preferredDateInput" class="date-field-label">Желаемая дата</label>
+            <input type="date" name="preferred_date" id="preferredDateInput" />
+          </div>
         </div>
         <textarea name="message" placeholder="Комментарий (необязательно)" maxlength="500" rows="3"></textarea>
         <button type="submit">Отправить заявку</button>

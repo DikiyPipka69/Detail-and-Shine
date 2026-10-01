@@ -243,6 +243,21 @@ h1, h2, h3{
   flex:1 1 160px;
   min-width:0;
 }
+.date-field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  flex:1 1 160px;
+  min-width:0;
+}
+.date-field-label{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.date-field input[type="date"]{width:100%;}
 .booking-form input, .booking-form select, .booking-form textarea{
   font-family:'Inter',sans-serif;
   font-size:14px;
