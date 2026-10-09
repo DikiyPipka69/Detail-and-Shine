@@ -377,15 +377,8 @@ h1, h2, h3{
 .faq-question[aria-expanded="true"] + .faq-answer{
   grid-template-rows:1fr;
 }
-.faq-answer p{
-  overflow:hidden;
-  margin:0;
-  padding:0 24px 20px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.6;
-  min-height:0;
-}
+.faq-answer-inner{ overflow:hidden; min-height:0; }
+.faq-answer p{ margin:0; padding:0 24px 20px; color:var(--muted); font-size:14px; line-height:1.6; }
 
 /* Footer */
 .footer .section-inner{
